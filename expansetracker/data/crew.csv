@@ -1,0 +1,24 @@
+import csv
+
+def write_crew_csv(filename):
+    header = ["Crew ID", "Name", "Position", "Ship ID"]
+
+    # Sample crew data
+    crew = [
+        ["1", "James Holden", "Captain", "1"],
+        ["2", "Naomi Nagata", "Engineer", "1"],
+        ["3", "Amos Burton", "Mechanic", "1"],
+        ["4", "Alex Kamal", "Pilot", "1"],
+        ["5", "Bobbie Draper", "Marine", "4"],
+        ["6", "Clarissa Mao", "Medic", "5"],
+        ["7", "Praxidike Meng", "Botanist", "3"],
+        ["8", "Camina Drummer", "Captain", "4"]
+    ]
+
+    with open(filename, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(header)
+        writer.writerows(crew)
+
+# Usage example
+write_crew_csv("data/crew.csv")

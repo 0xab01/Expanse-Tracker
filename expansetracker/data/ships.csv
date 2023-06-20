@@ -1,0 +1,21 @@
+import csv
+
+def write_ships_csv(filename):
+    header = ["Ship ID", "Ship Name", "Ship Type", "Captain"]
+
+    # Sample ship data
+    ships = [
+        ["1", "Rocinante", "Corvette", "James Holden"],
+        ["2", "Canterbury", "Ice hauler", "Shed Garvey"],
+        ["3", "Nauvoo", "Mormon generation ship", "Dimitri Havelock"],
+        ["4", "Knight", "Stealth frigate", "Camina Drummer"],
+        ["5", "Barkeith", "Cargo ship", "Fred Johnson"]
+    ]
+
+    with open(filename, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(header)
+        writer.writerows(ships)
+
+# Usage example
+write_ships_csv("data/ships.csv")
